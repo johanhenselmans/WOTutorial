@@ -1,0 +1,37 @@
+{
+    attributes = (
+        {allowsNull = N; name = id; prototypeName = id; }, 
+        {allowsNull = N; columnName = orderID; name = orderID; prototypeName = id; }, 
+        {
+            allowsNull = N; 
+            columnName = productID; 
+            name = productID; 
+            prototypeName = id; 
+        }
+    ); 
+    attributesUsedForLocking = (id, orderID, productID); 
+    className = "org.wocommunity.bl.OrderItem"; 
+    classProperties = (order, product); 
+    externalName = orderitem; 
+    fetchSpecificationDictionary = {}; 
+    name = OrderItem; 
+    primaryKeyAttributes = (id); 
+    relationships = (
+        {
+            destination = Order; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = id; sourceAttribute = orderID; }); 
+            name = order; 
+        }, 
+        {
+            destination = Product; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = id; sourceAttribute = productID; }); 
+            name = product; 
+        }
+    ); 
+}

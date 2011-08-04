@@ -1,0 +1,49 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = customerSince; 
+            name = customerSince; 
+            prototypeName = dateTime; 
+            serverTimeZone = GMT; 
+        }, 
+        {allowsNull = N; columnName = email; name = email; prototypeName = varchar50; }, 
+        {
+            allowsNull = N; 
+            columnName = firstName; 
+            name = firstName; 
+            prototypeName = varchar50; 
+        }, 
+        {allowsNull = N; name = id; prototypeName = id; }, 
+        {
+            allowsNull = N; 
+            columnName = lastName; 
+            name = lastName; 
+            prototypeName = varchar50; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = password; 
+            name = password; 
+            prototypeName = cryptoString; 
+        }
+    ); 
+    attributesUsedForLocking = (customerSince, email, firstName, id, lastName, password); 
+    className = "org.wocommunity.bl.Customer"; 
+    classProperties = (customerSince, email, firstName, lastName, orders, password); 
+    externalName = Contact; 
+    fetchSpecificationDictionary = {}; 
+    name = Customer; 
+    parent = Contact; 
+    primaryKeyAttributes = (id); 
+    relationships = (
+        {
+            destination = Order; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = customerID; sourceAttribute = id; }); 
+            name = orders; 
+        }
+    ); 
+    restrictingQualifier = "customerSince <> null"; 
+}

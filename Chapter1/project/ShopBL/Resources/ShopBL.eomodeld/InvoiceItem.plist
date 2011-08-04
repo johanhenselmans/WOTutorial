@@ -1,0 +1,42 @@
+{
+    attributes = (
+        {allowsNull = N; name = id; prototypeName = id; }, 
+        {
+            allowsNull = N; 
+            columnName = invoiceID; 
+            name = invoiceID; 
+            prototypeName = id; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = productID; 
+            name = productID; 
+            prototypeName = id; 
+        }
+    ); 
+    attributesUsedForLocking = (id, invoiceID, productID); 
+    className = "org.wocommunity.bl.InvoiceItem"; 
+    classProperties = (invoice, product); 
+    externalName = InvoiceItem; 
+    fetchSpecificationDictionary = {}; 
+    name = InvoiceItem; 
+    primaryKeyAttributes = (id); 
+    relationships = (
+        {
+            destination = Invoice; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = id; sourceAttribute = invoiceID; }); 
+            name = invoice; 
+        }, 
+        {
+            destination = Product; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = id; sourceAttribute = productID; }); 
+            name = product; 
+        }
+    ); 
+}

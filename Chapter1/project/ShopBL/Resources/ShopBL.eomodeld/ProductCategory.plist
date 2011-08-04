@@ -1,0 +1,29 @@
+{
+    attributes = (
+        {allowsNull = N; name = id; prototypeName = id; }, 
+        {
+            allowsNull = N; 
+            columnName = shortDecription; 
+            name = shortDecription; 
+            prototypeName = varchar50; 
+        }
+    ); 
+    attributesUsedForLocking = (id, shortDecription); 
+    className = "org.wocommunity.bl.ProductCategory"; 
+    classProperties = (products, shortDecription); 
+    externalName = ProductCategory; 
+    fetchSpecificationDictionary = {}; 
+    name = ProductCategory; 
+    primaryKeyAttributes = (id); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = ProductCategoryProduct; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = productCategoryId; sourceAttribute = id; }); 
+            name = productCategoryProducts; 
+        }, 
+        {definition = "productCategoryProducts.product"; name = products; }
+    ); 
+}

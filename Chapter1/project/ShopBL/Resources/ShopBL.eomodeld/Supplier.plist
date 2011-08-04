@@ -1,0 +1,40 @@
+{
+    attributes = (
+        {allowsNull = N; columnName = email; name = email; prototypeName = varchar50; }, 
+        {
+            allowsNull = N; 
+            columnName = firstName; 
+            name = firstName; 
+            prototypeName = varchar50; 
+        }, 
+        {allowsNull = N; name = id; prototypeName = id; }, 
+        {
+            allowsNull = N; 
+            columnName = lastName; 
+            name = lastName; 
+            prototypeName = varchar50; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = password; 
+            name = password; 
+            prototypeName = cryptoString; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = supplierSince; 
+            name = supplierSince; 
+            prototypeName = dateTime; 
+            serverTimeZone = GMT; 
+        }
+    ); 
+    attributesUsedForLocking = (email, firstName, id, lastName, password, supplierSince); 
+    className = "org.wocommunity.bl.Supplier"; 
+    classProperties = (email, firstName, lastName, password, supplierSince); 
+    externalName = Contact; 
+    fetchSpecificationDictionary = {}; 
+    name = Supplier; 
+    parent = Contact; 
+    primaryKeyAttributes = (id); 
+    restrictingQualifier = "supplierSince <> null"; 
+}

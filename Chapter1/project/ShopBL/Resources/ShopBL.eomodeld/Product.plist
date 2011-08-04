@@ -1,0 +1,53 @@
+{
+    attributes = (
+        {allowsNull = N; name = id; prototypeName = id; }, 
+        {
+            allowsNull = N; 
+            columnName = listPrice; 
+            name = listPrice; 
+            prototypeName = amount; 
+            valueClassName = "java.lang.BigDecimal"; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = shortDescription; 
+            name = shortDescription; 
+            prototypeName = varchar50; 
+        }
+    ); 
+    attributesUsedForLocking = (id, listPrice, shortDescription); 
+    className = "org.wocommunity.bl.Product"; 
+    classProperties = (invoiceItems, listPrice, orderItems, productCategories, shortDescription); 
+    externalName = Product; 
+    fetchSpecificationDictionary = {}; 
+    name = Product; 
+    primaryKeyAttributes = (id); 
+    relationships = (
+        {
+            destination = InvoiceItem; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = productID; sourceAttribute = id; }); 
+            name = invoiceItems; 
+        }, 
+        {
+            destination = OrderItem; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = productID; sourceAttribute = id; }); 
+            name = orderItems; 
+        }, 
+        {
+            definition = "productCategoryProducts.productCategory"; 
+            name = productCategories; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = ProductCategoryProduct; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = productId; sourceAttribute = id; }); 
+            name = productCategoryProducts; 
+        }
+    ); 
+}

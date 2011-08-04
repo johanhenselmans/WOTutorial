@@ -1,0 +1,55 @@
+{
+    EOModelVersion = "2.1"; 
+    adaptorName = JDBC; 
+    connectionDictionary = {
+        URL = "jdbc:postgresql://localhost/shop"; 
+        driver = "org.postgresql.Driver"; 
+        plugin = Postgresql; 
+        username = root; 
+    }; 
+    entities = (
+        {className = "org.wocommunity.bl.Contact"; name = Contact; }, 
+        {
+            className = "org.wocommunity.bl.Customer"; 
+            name = Customer; 
+            parent = Contact; 
+        }, 
+        {
+            className = "org.wocommunity.bl.Employee"; 
+            name = Employee; 
+            parent = Contact; 
+        }, 
+        {className = "org.wocommunity.bl.Invoice"; name = Invoice; }, 
+        {className = "org.wocommunity.bl.InvoiceItem"; name = InvoiceItem; }, 
+        {className = "org.wocommunity.bl.Order"; name = Order; }, 
+        {className = "org.wocommunity.bl.OrderItem"; name = OrderItem; }, 
+        {className = "org.wocommunity.bl.Product"; name = Product; }, 
+        {className = "org.wocommunity.bl.ProductCategory"; name = ProductCategory; }, 
+        {className = EOGenericRecord; name = ProductCategoryProduct; }, 
+        {
+            className = "org.wocommunity.bl.Supplier"; 
+            name = Supplier; 
+            parent = Contact; 
+        }
+    ); 
+    userInfo = {
+        "_EntityModeler" = {
+            activeDatabaseConfigName = Postgresql; 
+            databaseConfigs = {
+                ERRest = {adaptorName = REST; prototypeEntityName = EORESTPrototypes; }; 
+                H2 = {adaptorName = Memory; prototypeEntityName = EOJDBCH2Prototypes; }; 
+                MySQL = {adaptorName = JDBC; prototypeEntityName = EOJDBCMySQLPrototypes; }; 
+                Postgresql = {
+                    adaptorName = JDBC; 
+                    connectionDictionary = {
+                        URL = "jdbc:postgresql://localhost/shop"; 
+                        driver = "org.postgresql.Driver"; 
+                        plugin = Postgresql; 
+                        username = root; 
+                    }; 
+                    prototypeEntityName = EOJDBCPostgresqlPrototypes; 
+                }; 
+            }; 
+        }; 
+    }; 
+}

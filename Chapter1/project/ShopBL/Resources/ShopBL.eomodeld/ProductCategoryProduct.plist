@@ -1,0 +1,40 @@
+{
+    attributes = (
+        {
+            allowsNull = N; 
+            columnName = productCategoryId; 
+            name = productCategoryId; 
+            prototypeName = id; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = productId; 
+            name = productId; 
+            prototypeName = id; 
+        }
+    ); 
+    attributesUsedForLocking = (productCategoryId, productId); 
+    className = EOGenericRecord; 
+    externalName = ProductCategoryProduct; 
+    fetchSpecificationDictionary = {}; 
+    name = ProductCategoryProduct; 
+    primaryKeyAttributes = (productCategoryId, productId); 
+    relationships = (
+        {
+            destination = Product; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = id; sourceAttribute = productId; }); 
+            name = product; 
+        }, 
+        {
+            destination = ProductCategory; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = id; sourceAttribute = productCategoryId; }); 
+            name = productCategory; 
+        }
+    ); 
+}

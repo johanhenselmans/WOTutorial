@@ -1,0 +1,19 @@
+{
+    attributes = ({allowsNull = N; name = id; prototypeName = id; }); 
+    attributesUsedForLocking = (id); 
+    className = "org.wocommunity.bl.Invoice"; 
+    classProperties = (invoiceItems); 
+    externalName = Invoice; 
+    fetchSpecificationDictionary = {}; 
+    name = Invoice; 
+    primaryKeyAttributes = (id); 
+    relationships = (
+        {
+            destination = InvoiceItem; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = invoiceID; sourceAttribute = id; }); 
+            name = invoiceItems; 
+        }
+    ); 
+}

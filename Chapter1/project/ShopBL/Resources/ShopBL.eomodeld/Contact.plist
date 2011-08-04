@@ -1,0 +1,32 @@
+{
+    attributes = (
+        {allowsNull = N; columnName = email; name = email; prototypeName = varchar50; }, 
+        {
+            allowsNull = N; 
+            columnName = firstName; 
+            name = firstName; 
+            prototypeName = varchar50; 
+        }, 
+        {allowsNull = N; name = id; prototypeName = id; }, 
+        {
+            allowsNull = N; 
+            columnName = lastName; 
+            name = lastName; 
+            prototypeName = varchar50; 
+        }, 
+        {
+            allowsNull = N; 
+            columnName = password; 
+            name = password; 
+            prototypeName = cryptoString; 
+        }
+    ); 
+    attributesUsedForLocking = (email, firstName, id, lastName, password); 
+    className = "org.wocommunity.bl.Contact"; 
+    classProperties = (email, firstName, lastName, password); 
+    externalName = Contact; 
+    fetchSpecificationDictionary = {}; 
+    isAbstractEntity = Y; 
+    name = Contact; 
+    primaryKeyAttributes = (id); 
+}
